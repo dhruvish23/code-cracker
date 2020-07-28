@@ -23,22 +23,22 @@ if ( isset($_GET['md5']) ) {
     // first position in our "possible" pre-hash
     // text
     for($i=0; $i<strlen($txt); $i++ ) {
-        $ch1 = $txt[$i];   // The first of two characters
+        $n1 = $txt[$i];   // The first of four numbers
 
         // Our inner loop Not the use of new variables
         // $j and $ch2 
         for($j=0; $j<strlen($txt); $j++ ) {
-            $ch2 = $txt[$j];  // Our second character
+            $n2 = $txt[$j];  // Our second number
             
             for($k=0; $k<strlen($txt); $k++ ) {
-            $ch3 = $txt[$k];
+            $n3 = $txt[$k]; // Our third number
                 
                 for($m=0; $m<strlen($txt); $m++ ) {
-            $ch4 = $txt[$m];
+            $n4 = $txt[$m]; // Our fourth number
 
-            // Concatenate the two characters together to 
+            // Concatenate the four numbers together to 
             // form the "possible" pre-hash text
-            $try = $ch1.$ch2.$ch3.$ch4;
+            $try = $n1.$n2.$n3.$n4;
 
             // Run the hash and then check to see if we match
             $check = hash('md5', $try);
